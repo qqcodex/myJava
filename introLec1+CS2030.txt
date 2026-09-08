@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-### Chapter I: Java Basics
+### Chapter I: Java Basics / General
 - Source Code to Bytecode
 - JVM and Platform Independence
 
@@ -42,27 +42,57 @@
 
 
 ------------------------------------------------------------------------------------<CHAPTER-I>-------------------------------------------------------------------------------------------------
+- SOURCE CODE (.java)
+       ↓
+   javac (COMPILE TIME)
+       ↓
+BYTECODE (.class)
+       ↓
+   JVM LOADS BYTECODE (RUNTIME STARTS)
+       ↓
+   INTERPRETER
+   (Interprets bytecode line by line)
+       ↓
+   JIT(Just-In-Time) COMPILER
+   (Detects "hot" code - frequently used)
+       ↓
+   OPTIMIZED MACHINE CODE
+   (Compiled for speed)
+       ↓
+   EXECUTED
 
+OR jshell: .java → DIRECT INTERPRETATION → runs
 
-src(.java) -------> byteCode(.class) ------------------jvm interprets the byte-code(.class) & JIT(just-in-time compiles the interpreted byte-code to --> )---------------------->(machine-code) 
-           javac                                  
-                          (Platform-Independence) [Any machine that has 'jvm' can execute the .class file]
+- Platform-Independence: Any machine that has 'jvm' can execute the .class file
 
+- Statically typed; Every variable declared w/ data type. Once declared, the type cannot be changed.
 
+- STRONGLY TYPED = How the TYPE SYSTEM works
+    ↓
+    Cannot mix int and String without explicit conversion
+    Type errors caught at compile time
 
-
+CONSERVATIVE = How the COMPILER enforces rules
+    ↓
+    Strict about what it accepts
+    Won't let risky code pass
+e.g.
+int x = 5;
+String s = x;  // ❌ ERROR - won't allow implicit conversion
+Strongly typed: int and String are different types
+Conservative: Compiler refuses to guess or convert automatically
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------<CHAPTER-II>------------------------------------------------------------------------------------------------
 
 
 
 
-# Java Oops
-- Style of programming, Where we organize our programs around data rather than logic & objects rather than actions.
+# Java OOP
+- Style of programming, where we organize our programs around data rather than logic & objects rather than actions.
 
 **Class** - Blueprint that outlines the structure of our program.
 
-**Object** - Programming representation of real-world entity.
+**Object/Runtime Instances** - Programming representation of real-world entity.
 
 - JVM creates objects, With the help of Class, Hence called 'blueprint'.
 
@@ -80,7 +110,7 @@ Class(Blueprint) -------------------------> JVM ----------------------> Objects
    - **State**: Represents it's properties, The 'attributes' possibly distinguishing 1 object from the other.
    - **Behaviour**: Represents the actions Object might perform.
 
-- *Note*: Behaviours are represented via non-static methods.
+- *Note*: Behaviours are represented via non-static(instance-level) methods.
 
 
 
@@ -91,9 +121,9 @@ Class(Blueprint) -------------------------> JVM ----------------------> Objects
 
 ## public static void main(String[] args){}:
 
-   - main method: [Entry-point of out program]
+   - main method: [Entry-point of program]
 
-   - String[]: To accept the `cli` arguments. (command line interface)
+   - String[]: To accept the `CLI` arguments. (command line interface)
 
    - args: Accessible as array of string. [can be hello/apple/args/etc]
 
@@ -116,6 +146,9 @@ int           // Integer (4 bytes) | Range: -2^31 to 2^31-1
 long          // Integer (8 bytes) | Range: -2^63 to 2^63-1 | e.g., 123L
 char          // Single character (2 bytes) | Unicode values
 
+byte → short → int → long → float → double            
+    ↘                     [ If A < B, then A can be automatically promoted to B (implicit conversion). ]
+      char → int
 
 // --- Reference Types (Non-Primitive) ---
 
@@ -163,7 +196,7 @@ String name = null; // Equivalent to None in Python
 
 
 ---------------------------------------------------------------------------------Data-Types in .java------------------------------------------------------------------------------------------
-
+In Java, variables are containers used to store data in memory.
 
 
 - **Primitive-Data-Type**                                      | - **Non-Primitive-Data-Type**
@@ -178,7 +211,7 @@ String name = null; // Equivalent to None in Python
                                                                |
   - Ex. byte, short, int, long, float, double, char, boolean...|   - Ex. ArrayList                                         [Mutable],
                                                                |   -     Arrays[String & int], String,**Wrapper-Classes**  [Immutable].
-                                                               |   -     Custom-Classes, Objects                           [Mutable but can be made imutable]
+                                                               |   -     Custom-Classes, Objects                           [Mutable but can be made immutable]
 
 
 Note: String is an immutable object.
@@ -210,7 +243,7 @@ Note: String is an immutable object.
 ------------------------------------------------------------------------------------<CHAPTER-V>-----------------------------------------------------------------------------------------------
 
 
-## Pillars of Oops
+## Pillars of OOPS
 
 - **Encapsulation**: Process of wrapping data & methods into a single unit.
 
