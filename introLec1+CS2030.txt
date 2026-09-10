@@ -48,10 +48,14 @@
        ↓
 BYTECODE (.class)
        ↓
-   JVM LOADS BYTECODE (RUNTIME STARTS)
+   JVM LOADS BYTECODE (RUNTIME STARTS):
+- Static members are allocated in Method Area of JVM memory
        ↓
    INTERPRETER
-   (Interprets bytecode line by line)
+   (Interprets bytecode line by line):
+- Static members already in memory
+- Instance members created only when u instantiate the class w/ new 
+- Stored in Java Heap 
        ↓
    JIT(Just-In-Time) COMPILER
    (Detects "hot" code - frequently used)
@@ -146,6 +150,7 @@ int           // Integer (4 bytes) | Range: -2^31 to 2^31-1
 long          // Integer (8 bytes) | Range: -2^63 to 2^63-1 | e.g., 123L
 char          // Single character (2 bytes) | Unicode values
 
+Subtyping:
 byte → short → int → long → float → double            
     ↘                     [ If A < B, then A can be automatically promoted to B (implicit conversion). ]
       char → int
@@ -480,7 +485,7 @@ class Student {
 
 - **Instance-Variables**: Variables declared inside class but outside any methods.
 
-- **Final-Variables**:    Variables can't be modified once it is initialized.
+- **Final-Variables**:    Value cannot be reassigned once it is initialized.
 
 
 
