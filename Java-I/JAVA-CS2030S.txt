@@ -333,7 +333,17 @@ while(true){
 	- Many methods run only once
 	- Compiling "cold-code❄️" would waste c.p.u. & memory
 
+- Statically typed; Every variable declared w/ data type. Once declared, the type cannot be changed.
 
+- STRONGLY TYPED = How the TYPE SYSTEM works
+    ↓
+    Cannot mix int and String without explicit conversion
+    Type errors caught at compile time
+
+CONSERVATIVE = How the COMPILER enforces rules
+    ↓
+    Strict about what it accepts
+    Won't let risky code pass
 _______________________________________________________________________________________
 
 
@@ -745,7 +755,10 @@ ________________________________________________________________________________
 🐥boolean       // true or false    (size: JVM dependent😉)
 🐥char          // Single character (2 bytes) | Range: 0 to 65535 | Unicode values
 
-
+Subtyping:
+byte → short → int → long → float → double            
+    ↘                     [ If A < B, then A can be automatically promoted to B (implicit conversion). ]
+      char → int
 
 
 		--- Object Reference Types (Non-Primitive) ---
