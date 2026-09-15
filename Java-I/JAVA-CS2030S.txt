@@ -744,7 +744,7 @@ ________________________________________________________________________________
 💡: ⭐ Data - Types in JAVA ⭐
 
 
-		--- Primitive Types ---
+		--- Primitive Types --- (original/old data types)
 
 🐥byte          // Integer          (1 byte)  | Range: -128 to 127
 🐥short         // Integer          (2 bytes) | Range: -32,768 to 32,767
